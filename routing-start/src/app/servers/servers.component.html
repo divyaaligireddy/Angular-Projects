@@ -1,0 +1,35 @@
+<div class="row">
+  <button class="btn btn-primary" (click)="onReload()">Reload Servers</button>
+
+  <div class="col-xs-12 col-sm-4">
+    <div class="list-group">
+     <!--
+     Loads edit server component
+     <a
+        [routerLink]="['/servers', server.id, 'edit']"
+        [queryParams]="{allowEdits:'1'}"
+        fragment="loading"
+        href="#"
+        class="list-group-item"
+        *ngFor="let server of servers">
+        {{ server.name }}
+      </a>-->
+      <a
+        [routerLink]="['/servers', server.id]"
+        [queryParams]="{allowEdits:'1'}"
+        fragment="loading"
+        href="#"
+        class="list-group-item"
+        *ngFor="let server of servers">
+        {{ server.name }}
+      </a>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-4">
+    <router-outlet></router-outlet>
+    <!--<app-edit-server></app-edit-server>
+    <hr>
+    &lt;!&ndash;<app-server></app-server>&ndash;&gt;-->
+  </div>
+</div>
+
